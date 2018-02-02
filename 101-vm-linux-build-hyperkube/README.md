@@ -13,7 +13,15 @@ Follow the below links to create/download an Ubuntu 16.04 LTS Image and upload t
 ```
 +	Login into Azurestack portal
 +	Click "New" -> "Custom" -> "Template deployment -> "Edit Template" -> "Load File" -> Select azure.deploy.json from the local drive -> "Save"
-+ Click "Edit Parameters" and 	Fill the parameters. Please note down the admin name and password for later use
++ Click "Edit Parameters" and fill following paramters 
+  + adminname - azureuser(default)
+  + adminpassword - ensure 16 character passwd
+  + repoLink - Link to the kubernetes repository root (eg: https://github.com/msazurestackworkloads/kubernetes)
+  + repoBranch - kubernetes repository active branch name( eg: master)
+  + dockerhubusername - the dockerhub account user name to which the hyperkube images should be uploaded to (eg: msazurestackdocker)
+  + dockerhubpassword - the dockerhub account password
+  + dockerhubreponame - the dockerhub repository name to which the image should be pushed to. For pushing images to msazurestackdocker account, please create your personal repo under that account and use it. Do not use kubernetes repo.
+  + hyperkubeversion  - give a unique image version number
 +	Select "Create new" to create new Resource Group and give a new resource group name
 +	Click "Create"
 + Wait until the template deployment is completed
